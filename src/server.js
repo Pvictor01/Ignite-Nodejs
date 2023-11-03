@@ -2,7 +2,7 @@
 //CommonJS => require -> obsoleto
 
 //ESModules => import/export
-import http, { get } from 'node:http' //node: por ser módulo interno
+import http from 'node:http' //node: por ser módulo interno
 //GET => Buscar um recurso no back-end
 //POST => Criar um recurso no back-end
 //PUT => Atualizar um recurso no back-end
@@ -33,10 +33,10 @@ const server = http.createServer(function(req, res) {
       email: 'johndoe@example.com',
     })
 
-    return res.end('Criação de usuários')
+    return res.writeHead(201).end()
   }
 
-  return res.end('Hello World')
+  return res.writeHead(404).end()
 })
 
 server.listen(3333)
