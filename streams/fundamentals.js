@@ -39,5 +39,5 @@ class MultiplyByTenStream extends Writable {
 }
 
 new OneToHundredStream() //stream de leitura
-  .pipe(new InverseNumberStream()) //precisa ler e escrever
+  .pipe(new InverseNumberStream()) //stream de transformação, precisa ler e escrever
   .pipe(new MultiplyByTenStream()) //stream de escrita
